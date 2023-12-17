@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="pl">
-    <head>
-        <meta charset="utf-8">
-        <title>Contact website</title>
-        <link rel="stylesheet" href="../static/style.css">
-    </head>
-    <body>
+{% extends "parent.html" %}
 
-      <h2 class="hello">Witaj na mojej stronie domowej</h2>
-      <img src="../static/smile.jpg" 
-        width="400" height="300" alt="witamy">
-      <h1 class="me">Kontakt</h1>
-        <ul>
-          <li>email: dawid.okrojek@gmail.com</li>
-          <li>telefon: nie podano :)</li>
-        </ul>
-      <p class="bigger">Wyślij wiadomość</p>
+{% block content %}
+<h1 class="me">{{content['title']}}</h1>
+<ul>
+  {% for i in content.values() %}
+    {% if content['title'] != i %}
+    <li>{{i}}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
-      <form>
+<p class="bigger">Wyślij wiadomość</p>
+<form>
 
-        <textarea id="message" name="message"></textarea>
-        <button type="submit">Prześlij</button>
+  <textarea id="message" name="message"></textarea>
+  <button type="submit">Prześlij</button>
 
-      </form>
-      
-    </body>
-</html>
+</form>
+{% endblock %}

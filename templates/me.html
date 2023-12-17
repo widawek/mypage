@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="pl">
-    <head>
-        <meta charset="utf-8">
-        <title>My first website</title>
-        <link rel="stylesheet" href="../static/style.css">
-    </head>
-    <body>
-      <h2 class="hello">Witaj na mojej stronie domowej</h2>
-      <img src="../static/smile.jpg" 
-        width="400" height="300" alt="witamy">
-      <h1 class="me">O mnie</h1>
-        <p><strong>imię: </strong>Dawid<br><br>
-        <strong>nazwisko: </strong>Okrojek</p>
+{% extends "parent.html" %}
 
-    </body>
-</html>
+{% block content %}
+<h1 class="me">{{content['title']}}</h1>
+<p><strong>imię: </strong>{{content['name']}}<br><br>
+<strong>nazwisko: </strong>{{content['surname']}}</p>
+{% endblock %}
 
